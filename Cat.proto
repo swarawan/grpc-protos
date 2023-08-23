@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "id.swarawan.grpc";
+option java_outer_classname = "CatProto";
+
+package cat;
+
+service Cat {
+  rpc GetAllStream(google.protobuf.Empty) returns (stream CatResponse);
+  rpc GetAll(google.protobuf.Empty) returns (CatListResponse);
+  rpc GetByName(CatRequest) returns (CatResponse);
+}
+
+message CatRequest {
+  string name = 1;
+}
+
+message CatListResponse {
+  repeated CatResponse cats = 1;
+}
+
+message CatResponse {
+  optional string name = 1;
+  optional int32 age = 2;
+  optional int32 weight = 3;
+  optional string origin = 4;
+  optional Breed breed = 5;
+}
+
+enum Breed {
+  ABYSSINIAN = 0;
+  AMERICAN_BOBTAIL = 1;
+  BALINESE = 3;
+  BENGAL = 4;
+  BIRMAN = 5;
+  BURMESE = 6;
+}
