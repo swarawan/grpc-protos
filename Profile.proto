@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "id.swarawan.grpc";
+option java_outer_classname = "ProfileProto";
+
+package id.swarawan.grpc.profile;
+
+service Profile {
+  rpc GetUserDetails(UserDetailsRequest) returns (UserDetailsResponse);
+}
+
+message UserDetailsRequest {
+  string uid = 1;
+}
+
+message UserDetailsResponse {
+  string name = 1;
+  string email = 2;
+  string image = 3;
+  string address = 4;
+}
