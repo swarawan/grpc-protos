@@ -1,10 +1,10 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "id.swarawan.grpc";
+option java_package = "id.swarawan";
 option java_outer_classname = "ProfileProto";
 
-package id.swarawan.grpc.profile;
+package id.swarawan.profile;
 
 service Profile {
   rpc GetUserDetails(UserDetailsRequest) returns (UserDetailsResponse);

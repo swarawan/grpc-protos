@@ -1,10 +1,10 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "id.swarawan.grpc";
+option java_package = "id.swarawan";
 option java_outer_classname = "LoginProto";
 
-package id.swarawan.grpc.auth;
+package id.swarawan.auth;
 
 service Auth {
   rpc Login(LoginRequest) returns (LoginResponse);
