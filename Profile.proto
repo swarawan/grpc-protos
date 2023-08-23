@@ -11,7 +11,7 @@ service Profile {
 }
 
 message UserDetailsRequest {
-  string uid = 1;
+  int32 uid = 1;
 }
 
 message UserDetailsResponse {
